@@ -1,0 +1,67 @@
+entity VAbstractAuditingEntity {
+	id Long,
+   	createdBy String,
+    createdTime Instant,
+    modifiedBy String,
+    modifiedTime Instant,
+    delFlag Boolean
+}
+
+entity VTenant {
+    code String,
+    name String,
+    description String,
+    status Boolean
+}
+
+entity VOrganization{
+	parentId Long,
+    code String,
+    name String,
+    description String,
+    path String,
+    fullPath String,
+    enabled Boolean,
+    type Integer
+}
+
+entity VUser{
+    username String,
+    fullname String,
+    firstname String,
+    lastname String,
+    password String,
+    email String,
+    emailVerified String,
+    language String,
+    enabled Boolean
+}
+
+entity VRole{
+    code String,
+    name String,
+    description String,
+    applicationId Long,
+}
+
+
+relationship ManyToMany {
+	VUser to VRole 
+    VOrganization to VUser
+    VOrganization to VRole
+}
+
+
+// Set pagination options
+paginate * with pagination except VAbstractAuditingEntity
+
+// Use Data Transfer Objects (DTO)
+dto * with mapstruct except VAbstractAuditingEntity
+
+// Set service options to all except few
+service * with serviceImpl except VAbstractAuditingEntity 
+
+// Set an angular suffix
+// angularSuffix * with mySuffix
+
+
