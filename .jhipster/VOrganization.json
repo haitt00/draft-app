@@ -1,0 +1,63 @@
+{
+  "applications": "*",
+  "changelogDate": "20230208074229",
+  "dto": "mapstruct",
+  "embedded": false,
+  "entityTableName": "v_organization",
+  "fields": [
+    {
+      "fieldName": "parentId",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "code",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "name",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "description",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "path",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "fullPath",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "enabled",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "type",
+      "fieldType": "Integer"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "name": "VOrganization",
+  "pagination": "pagination",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "vUser",
+      "otherEntityRelationshipName": "vOrganization",
+      "ownerSide": true,
+      "relationshipName": "vUser",
+      "relationshipType": "many-to-many"
+    },
+    {
+      "otherEntityName": "vRole",
+      "otherEntityRelationshipName": "vOrganization",
+      "ownerSide": true,
+      "relationshipName": "vRole",
+      "relationshipType": "many-to-many"
+    }
+  ],
+  "service": "serviceImpl"
+}

@@ -1,0 +1,92 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+      <h2
+        id="jhi-v-abstract-auditing-entity-heading"
+        data-cy="VAbstractAuditingEntityCreateUpdateHeading"
+        jhiTranslate="draftApp.vAbstractAuditingEntity.home.createOrEditLabel"
+      >
+        Create or edit a V Abstract Auditing Entity
+      </h2>
+
+      <div>
+        <jhi-alert-error></jhi-alert-error>
+
+        <div class="row mb-3" *ngIf="editForm.controls.id.value !== null">
+          <label class="form-label" jhiTranslate="draftApp.vAbstractAuditingEntity.id" for="field_id">Id</label>
+          <input type="number" class="form-control" name="id" id="field_id" data-cy="id" formControlName="id" [readonly]="true" />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="draftApp.vAbstractAuditingEntity.createdBy" for="field_createdBy">Created By</label>
+          <input type="text" class="form-control" name="createdBy" id="field_createdBy" data-cy="createdBy" formControlName="createdBy" />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="draftApp.vAbstractAuditingEntity.createdTime" for="field_createdTime">Created Time</label>
+          <div class="d-flex">
+            <input
+              id="field_createdTime"
+              data-cy="createdTime"
+              type="datetime-local"
+              class="form-control"
+              name="createdTime"
+              formControlName="createdTime"
+              placeholder="YYYY-MM-DD HH:mm"
+            />
+          </div>
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="draftApp.vAbstractAuditingEntity.modifiedBy" for="field_modifiedBy">Modified By</label>
+          <input
+            type="text"
+            class="form-control"
+            name="modifiedBy"
+            id="field_modifiedBy"
+            data-cy="modifiedBy"
+            formControlName="modifiedBy"
+          />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="draftApp.vAbstractAuditingEntity.modifiedTime" for="field_modifiedTime"
+            >Modified Time</label
+          >
+          <div class="d-flex">
+            <input
+              id="field_modifiedTime"
+              data-cy="modifiedTime"
+              type="datetime-local"
+              class="form-control"
+              name="modifiedTime"
+              formControlName="modifiedTime"
+              placeholder="YYYY-MM-DD HH:mm"
+            />
+          </div>
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="draftApp.vAbstractAuditingEntity.delFlag" for="field_delFlag">Del Flag</label>
+          <input type="checkbox" class="form-check" name="delFlag" id="field_delFlag" data-cy="delFlag" formControlName="delFlag" />
+        </div>
+      </div>
+
+      <div>
+        <button type="button" id="cancel-save" data-cy="entityCreateCancelButton" class="btn btn-secondary" (click)="previousState()">
+          <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+        </button>
+
+        <button
+          type="submit"
+          id="save-entity"
+          data-cy="entityCreateSaveButton"
+          [disabled]="editForm.invalid || isSaving"
+          class="btn btn-primary"
+        >
+          <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

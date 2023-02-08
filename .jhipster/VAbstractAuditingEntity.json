@@ -1,0 +1,40 @@
+{
+  "applications": "*",
+  "changelogDate": "20230208074227",
+  "dto": "no",
+  "embedded": false,
+  "entityTableName": "v_abstract_auditing_entity",
+  "fields": [
+    {
+      "fieldName": "id",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "createdBy",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "createdTime",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "modifiedBy",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "modifiedTime",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "delFlag",
+      "fieldType": "Boolean"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "name": "VAbstractAuditingEntity",
+  "pagination": "no",
+  "readOnly": false,
+  "relationships": [],
+  "service": "no"
+}

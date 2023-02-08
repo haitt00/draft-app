@@ -1,0 +1,116 @@
+<div>
+  <h2 id="page-heading" data-cy="VAbstractAuditingEntityHeading">
+    <span jhiTranslate="draftApp.vAbstractAuditingEntity.home.title">V Abstract Auditing Entities</span>
+
+    <div class="d-flex justify-content-end">
+      <button class="btn btn-info me-2" (click)="load()" [disabled]="isLoading">
+        <fa-icon icon="sync" [spin]="isLoading"></fa-icon>
+        <span jhiTranslate="draftApp.vAbstractAuditingEntity.home.refreshListLabel">Refresh list</span>
+      </button>
+
+      <button
+        id="jh-create-entity"
+        data-cy="entityCreateButton"
+        class="btn btn-primary jh-create-entity create-v-abstract-auditing-entity"
+        [routerLink]="['/v-abstract-auditing-entity/new']"
+      >
+        <fa-icon icon="plus"></fa-icon>
+        <span jhiTranslate="draftApp.vAbstractAuditingEntity.home.createLabel"> Create a new V Abstract Auditing Entity </span>
+      </button>
+    </div>
+  </h2>
+
+  <jhi-alert-error></jhi-alert-error>
+
+  <jhi-alert></jhi-alert>
+
+  <div class="alert alert-warning" id="no-result" *ngIf="vAbstractAuditingEntities?.length === 0">
+    <span jhiTranslate="draftApp.vAbstractAuditingEntity.home.notFound">No V Abstract Auditing Entities found</span>
+  </div>
+
+  <div class="table-responsive table-entities" id="entities" *ngIf="vAbstractAuditingEntities && vAbstractAuditingEntities.length > 0">
+    <table class="table table-striped" aria-describedby="page-heading">
+      <thead>
+        <tr jhiSort [(predicate)]="predicate" [(ascending)]="ascending" (sortChange)="navigateToWithComponentValues()">
+          <th scope="col" jhiSortBy="id">
+            <div class="d-flex">
+              <span jhiTranslate="draftApp.vAbstractAuditingEntity.id">Id</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="createdBy">
+            <div class="d-flex">
+              <span jhiTranslate="draftApp.vAbstractAuditingEntity.createdBy">Created By</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="createdTime">
+            <div class="d-flex">
+              <span jhiTranslate="draftApp.vAbstractAuditingEntity.createdTime">Created Time</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="modifiedBy">
+            <div class="d-flex">
+              <span jhiTranslate="draftApp.vAbstractAuditingEntity.modifiedBy">Modified By</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="modifiedTime">
+            <div class="d-flex">
+              <span jhiTranslate="draftApp.vAbstractAuditingEntity.modifiedTime">Modified Time</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="delFlag">
+            <div class="d-flex">
+              <span jhiTranslate="draftApp.vAbstractAuditingEntity.delFlag">Del Flag</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col"></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let vAbstractAuditingEntity of vAbstractAuditingEntities; trackBy: trackId" data-cy="entityTable">
+          <td>
+            <a [routerLink]="['/v-abstract-auditing-entity', vAbstractAuditingEntity.id, 'view']">{{ vAbstractAuditingEntity.id }}</a>
+          </td>
+          <td>{{ vAbstractAuditingEntity.createdBy }}</td>
+          <td>{{ vAbstractAuditingEntity.createdTime | formatMediumDatetime }}</td>
+          <td>{{ vAbstractAuditingEntity.modifiedBy }}</td>
+          <td>{{ vAbstractAuditingEntity.modifiedTime | formatMediumDatetime }}</td>
+          <td>{{ vAbstractAuditingEntity.delFlag }}</td>
+          <td class="text-end">
+            <div class="btn-group">
+              <button
+                type="submit"
+                [routerLink]="['/v-abstract-auditing-entity', vAbstractAuditingEntity.id, 'view']"
+                class="btn btn-info btn-sm"
+                data-cy="entityDetailsButton"
+              >
+                <fa-icon icon="eye"></fa-icon>
+                <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+              </button>
+
+              <button
+                type="submit"
+                [routerLink]="['/v-abstract-auditing-entity', vAbstractAuditingEntity.id, 'edit']"
+                class="btn btn-primary btn-sm"
+                data-cy="entityEditButton"
+              >
+                <fa-icon icon="pencil-alt"></fa-icon>
+                <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+              </button>
+
+              <button type="submit" (click)="delete(vAbstractAuditingEntity)" class="btn btn-danger btn-sm" data-cy="entityDeleteButton">
+                <fa-icon icon="times"></fa-icon>
+                <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+              </button>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
