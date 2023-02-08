@@ -1,0 +1,28 @@
+{
+  "draftApp": {
+    "vAbstractAuditingEntity": {
+      "home": {
+        "title": "V Abstract Auditing Entities",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new V Abstract Auditing Entity",
+        "createOrEditLabel": "Create or edit a V Abstract Auditing Entity",
+        "notFound": "No V Abstract Auditing Entities found"
+      },
+      "created": "A new V Abstract Auditing Entity is created with identifier {{ param }}",
+      "updated": "A V Abstract Auditing Entity is updated with identifier {{ param }}",
+      "deleted": "A V Abstract Auditing Entity is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete V Abstract Auditing Entity {{ id }}?"
+      },
+      "detail": {
+        "title": "V Abstract Auditing Entity"
+      },
+      "id": "Id",
+      "createdBy": "Created By",
+      "createdTime": "Created Time",
+      "modifiedBy": "Modified By",
+      "modifiedTime": "Modified Time",
+      "delFlag": "Del Flag"
+    }
+  }
+}

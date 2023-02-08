@@ -1,0 +1,47 @@
+{
+  "applications": "*",
+  "changelogDate": "20230208074255",
+  "dto": "mapstruct",
+  "embedded": false,
+  "entityTableName": "v_role",
+  "fields": [
+    {
+      "fieldName": "code",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "name",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "description",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "applicationId",
+      "fieldType": "Long"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "name": "VRole",
+  "pagination": "pagination",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "vUser",
+      "otherEntityRelationshipName": "vRole",
+      "ownerSide": false,
+      "relationshipName": "vUser",
+      "relationshipType": "many-to-many"
+    },
+    {
+      "otherEntityName": "vOrganization",
+      "otherEntityRelationshipName": "vRole",
+      "ownerSide": false,
+      "relationshipName": "vOrganization",
+      "relationshipType": "many-to-many"
+    }
+  ],
+  "service": "serviceImpl"
+}

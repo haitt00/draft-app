@@ -1,0 +1,67 @@
+{
+  "applications": "*",
+  "changelogDate": "20230208074254",
+  "dto": "mapstruct",
+  "embedded": false,
+  "entityTableName": "v_user",
+  "fields": [
+    {
+      "fieldName": "username",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "fullname",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "firstname",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "lastname",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "password",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "email",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "emailVerified",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "language",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "enabled",
+      "fieldType": "Boolean"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "name": "VUser",
+  "pagination": "pagination",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "vRole",
+      "otherEntityRelationshipName": "vUser",
+      "ownerSide": true,
+      "relationshipName": "vRole",
+      "relationshipType": "many-to-many"
+    },
+    {
+      "otherEntityName": "vOrganization",
+      "otherEntityRelationshipName": "vUser",
+      "ownerSide": false,
+      "relationshipName": "vOrganization",
+      "relationshipType": "many-to-many"
+    }
+  ],
+  "service": "serviceImpl"
+}

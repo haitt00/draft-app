@@ -1,0 +1,27 @@
+{
+  "draftApp": {
+    "vTenant": {
+      "home": {
+        "title": "V Tenants",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new V Tenant",
+        "createOrEditLabel": "Create or edit a V Tenant",
+        "notFound": "No V Tenants found"
+      },
+      "created": "A new V Tenant is created with identifier {{ param }}",
+      "updated": "A V Tenant is updated with identifier {{ param }}",
+      "deleted": "A V Tenant is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete V Tenant {{ id }}?"
+      },
+      "detail": {
+        "title": "V Tenant"
+      },
+      "id": "ID",
+      "code": "Code",
+      "name": "Name",
+      "description": "Description",
+      "status": "Status"
+    }
+  }
+}

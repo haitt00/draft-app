@@ -1,0 +1,34 @@
+{
+  "draftApp": {
+    "vUser": {
+      "home": {
+        "title": "V Users",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new V User",
+        "createOrEditLabel": "Create or edit a V User",
+        "notFound": "No V Users found"
+      },
+      "created": "A new V User is created with identifier {{ param }}",
+      "updated": "A V User is updated with identifier {{ param }}",
+      "deleted": "A V User is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete V User {{ id }}?"
+      },
+      "detail": {
+        "title": "V User"
+      },
+      "id": "ID",
+      "username": "Username",
+      "fullname": "Fullname",
+      "firstname": "Firstname",
+      "lastname": "Lastname",
+      "password": "Password",
+      "email": "Email",
+      "emailVerified": "Email Verified",
+      "language": "Language",
+      "enabled": "Enabled",
+      "vRole": "V Role",
+      "vOrganization": "V Organization"
+    }
+  }
+}

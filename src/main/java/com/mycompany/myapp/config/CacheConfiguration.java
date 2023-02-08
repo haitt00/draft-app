@@ -48,6 +48,17 @@ public class CacheConfiguration {
             createCache(cm, com.mycompany.myapp.domain.User.class.getName());
             createCache(cm, com.mycompany.myapp.domain.Authority.class.getName());
             createCache(cm, com.mycompany.myapp.domain.User.class.getName() + ".authorities");
+            createCache(cm, com.mycompany.myapp.domain.VAbstractAuditingEntity.class.getName());
+            createCache(cm, com.mycompany.myapp.domain.VTenant.class.getName());
+            createCache(cm, com.mycompany.myapp.domain.VOrganization.class.getName());
+            createCache(cm, com.mycompany.myapp.domain.VOrganization.class.getName() + ".vUsers");
+            createCache(cm, com.mycompany.myapp.domain.VOrganization.class.getName() + ".vRoles");
+            createCache(cm, com.mycompany.myapp.domain.VUser.class.getName());
+            createCache(cm, com.mycompany.myapp.domain.VUser.class.getName() + ".vRoles");
+            createCache(cm, com.mycompany.myapp.domain.VUser.class.getName() + ".vOrganizations");
+            createCache(cm, com.mycompany.myapp.domain.VRole.class.getName());
+            createCache(cm, com.mycompany.myapp.domain.VRole.class.getName() + ".vUsers");
+            createCache(cm, com.mycompany.myapp.domain.VRole.class.getName() + ".vOrganizations");
             // jhipster-needle-ehcache-add-entry
         };
     }

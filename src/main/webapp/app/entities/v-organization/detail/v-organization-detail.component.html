@@ -1,0 +1,74 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <div *ngIf="vOrganization">
+      <h2 data-cy="vOrganizationDetailsHeading"><span jhiTranslate="draftApp.vOrganization.detail.title">V Organization</span></h2>
+
+      <hr />
+
+      <jhi-alert-error></jhi-alert-error>
+
+      <jhi-alert></jhi-alert>
+
+      <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="global.field.id">ID</span></dt>
+        <dd>
+          <span>{{ vOrganization.id }}</span>
+        </dd>
+        <dt><span jhiTranslate="draftApp.vOrganization.parentId">Parent Id</span></dt>
+        <dd>
+          <span>{{ vOrganization.parentId }}</span>
+        </dd>
+        <dt><span jhiTranslate="draftApp.vOrganization.code">Code</span></dt>
+        <dd>
+          <span>{{ vOrganization.code }}</span>
+        </dd>
+        <dt><span jhiTranslate="draftApp.vOrganization.name">Name</span></dt>
+        <dd>
+          <span>{{ vOrganization.name }}</span>
+        </dd>
+        <dt><span jhiTranslate="draftApp.vOrganization.description">Description</span></dt>
+        <dd>
+          <span>{{ vOrganization.description }}</span>
+        </dd>
+        <dt><span jhiTranslate="draftApp.vOrganization.path">Path</span></dt>
+        <dd>
+          <span>{{ vOrganization.path }}</span>
+        </dd>
+        <dt><span jhiTranslate="draftApp.vOrganization.fullPath">Full Path</span></dt>
+        <dd>
+          <span>{{ vOrganization.fullPath }}</span>
+        </dd>
+        <dt><span jhiTranslate="draftApp.vOrganization.enabled">Enabled</span></dt>
+        <dd>
+          <span>{{ vOrganization.enabled }}</span>
+        </dd>
+        <dt><span jhiTranslate="draftApp.vOrganization.type">Type</span></dt>
+        <dd>
+          <span>{{ vOrganization.type }}</span>
+        </dd>
+        <dt><span jhiTranslate="draftApp.vOrganization.vUser">V User</span></dt>
+        <dd>
+          <span *ngFor="let vUser of vOrganization.vUsers; let last = last">
+            <a [routerLink]="['/v-user', vUser.id, 'view']">{{ vUser.id }}</a
+            >{{ last ? '' : ', ' }}
+          </span>
+        </dd>
+        <dt><span jhiTranslate="draftApp.vOrganization.vRole">V Role</span></dt>
+        <dd>
+          <span *ngFor="let vRole of vOrganization.vRoles; let last = last">
+            <a [routerLink]="['/v-role', vRole.id, 'view']">{{ vRole.id }}</a
+            >{{ last ? '' : ', ' }}
+          </span>
+        </dd>
+      </dl>
+
+      <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+      </button>
+
+      <button type="button" [routerLink]="['/v-organization', vOrganization.id, 'edit']" class="btn btn-primary">
+        <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+      </button>
+    </div>
+  </div>
+</div>
