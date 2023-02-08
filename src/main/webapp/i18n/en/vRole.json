@@ -1,0 +1,29 @@
+{
+  "draftApp": {
+    "vRole": {
+      "home": {
+        "title": "V Roles",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new V Role",
+        "createOrEditLabel": "Create or edit a V Role",
+        "notFound": "No V Roles found"
+      },
+      "created": "A new V Role is created with identifier {{ param }}",
+      "updated": "A V Role is updated with identifier {{ param }}",
+      "deleted": "A V Role is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete V Role {{ id }}?"
+      },
+      "detail": {
+        "title": "V Role"
+      },
+      "id": "ID",
+      "code": "Code",
+      "name": "Name",
+      "description": "Description",
+      "applicationId": "Application Id",
+      "vUser": "V User",
+      "vOrganization": "V Organization"
+    }
+  }
+}

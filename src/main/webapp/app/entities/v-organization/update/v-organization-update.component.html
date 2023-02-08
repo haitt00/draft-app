@@ -1,0 +1,115 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+      <h2
+        id="jhi-v-organization-heading"
+        data-cy="VOrganizationCreateUpdateHeading"
+        jhiTranslate="draftApp.vOrganization.home.createOrEditLabel"
+      >
+        Create or edit a V Organization
+      </h2>
+
+      <div>
+        <jhi-alert-error></jhi-alert-error>
+
+        <div class="row mb-3" *ngIf="editForm.controls.id.value !== null">
+          <label class="form-label" jhiTranslate="global.field.id" for="field_id">ID</label>
+          <input type="number" class="form-control" name="id" id="field_id" data-cy="id" formControlName="id" [readonly]="true" />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="draftApp.vOrganization.parentId" for="field_parentId">Parent Id</label>
+          <input type="number" class="form-control" name="parentId" id="field_parentId" data-cy="parentId" formControlName="parentId" />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="draftApp.vOrganization.code" for="field_code">Code</label>
+          <input type="text" class="form-control" name="code" id="field_code" data-cy="code" formControlName="code" />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="draftApp.vOrganization.name" for="field_name">Name</label>
+          <input type="text" class="form-control" name="name" id="field_name" data-cy="name" formControlName="name" />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="draftApp.vOrganization.description" for="field_description">Description</label>
+          <input
+            type="text"
+            class="form-control"
+            name="description"
+            id="field_description"
+            data-cy="description"
+            formControlName="description"
+          />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="draftApp.vOrganization.path" for="field_path">Path</label>
+          <input type="text" class="form-control" name="path" id="field_path" data-cy="path" formControlName="path" />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="draftApp.vOrganization.fullPath" for="field_fullPath">Full Path</label>
+          <input type="text" class="form-control" name="fullPath" id="field_fullPath" data-cy="fullPath" formControlName="fullPath" />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="draftApp.vOrganization.enabled" for="field_enabled">Enabled</label>
+          <input type="checkbox" class="form-check" name="enabled" id="field_enabled" data-cy="enabled" formControlName="enabled" />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="draftApp.vOrganization.type" for="field_type">Type</label>
+          <input type="number" class="form-control" name="type" id="field_type" data-cy="type" formControlName="type" />
+        </div>
+
+        <div class="row mb-3">
+          <label jhiTranslate="draftApp.vOrganization.vUser" for="field_vUsers">V User</label>
+          <select
+            class="form-control"
+            id="field_vUsers"
+            data-cy="vUser"
+            multiple
+            name="vUsers"
+            formControlName="vUsers"
+            [compareWith]="compareVUser"
+          >
+            <option [ngValue]="vUserOption" *ngFor="let vUserOption of vUsersSharedCollection">{{ vUserOption.id }}</option>
+          </select>
+        </div>
+
+        <div class="row mb-3">
+          <label jhiTranslate="draftApp.vOrganization.vRole" for="field_vRoles">V Role</label>
+          <select
+            class="form-control"
+            id="field_vRoles"
+            data-cy="vRole"
+            multiple
+            name="vRoles"
+            formControlName="vRoles"
+            [compareWith]="compareVRole"
+          >
+            <option [ngValue]="vRoleOption" *ngFor="let vRoleOption of vRolesSharedCollection">{{ vRoleOption.id }}</option>
+          </select>
+        </div>
+      </div>
+
+      <div>
+        <button type="button" id="cancel-save" data-cy="entityCreateCancelButton" class="btn btn-secondary" (click)="previousState()">
+          <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+        </button>
+
+        <button
+          type="submit"
+          id="save-entity"
+          data-cy="entityCreateSaveButton"
+          [disabled]="editForm.invalid || isSaving"
+          class="btn btn-primary"
+        >
+          <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

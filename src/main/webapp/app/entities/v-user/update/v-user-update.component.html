@@ -1,0 +1,101 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+      <h2 id="jhi-v-user-heading" data-cy="VUserCreateUpdateHeading" jhiTranslate="draftApp.vUser.home.createOrEditLabel">
+        Create or edit a V User
+      </h2>
+
+      <div>
+        <jhi-alert-error></jhi-alert-error>
+
+        <div class="row mb-3" *ngIf="editForm.controls.id.value !== null">
+          <label class="form-label" jhiTranslate="global.field.id" for="field_id">ID</label>
+          <input type="number" class="form-control" name="id" id="field_id" data-cy="id" formControlName="id" [readonly]="true" />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="draftApp.vUser.username" for="field_username">Username</label>
+          <input type="text" class="form-control" name="username" id="field_username" data-cy="username" formControlName="username" />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="draftApp.vUser.fullname" for="field_fullname">Fullname</label>
+          <input type="text" class="form-control" name="fullname" id="field_fullname" data-cy="fullname" formControlName="fullname" />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="draftApp.vUser.firstname" for="field_firstname">Firstname</label>
+          <input type="text" class="form-control" name="firstname" id="field_firstname" data-cy="firstname" formControlName="firstname" />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="draftApp.vUser.lastname" for="field_lastname">Lastname</label>
+          <input type="text" class="form-control" name="lastname" id="field_lastname" data-cy="lastname" formControlName="lastname" />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="draftApp.vUser.password" for="field_password">Password</label>
+          <input type="text" class="form-control" name="password" id="field_password" data-cy="password" formControlName="password" />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="draftApp.vUser.email" for="field_email">Email</label>
+          <input type="text" class="form-control" name="email" id="field_email" data-cy="email" formControlName="email" />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="draftApp.vUser.emailVerified" for="field_emailVerified">Email Verified</label>
+          <input
+            type="text"
+            class="form-control"
+            name="emailVerified"
+            id="field_emailVerified"
+            data-cy="emailVerified"
+            formControlName="emailVerified"
+          />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="draftApp.vUser.language" for="field_language">Language</label>
+          <input type="text" class="form-control" name="language" id="field_language" data-cy="language" formControlName="language" />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="draftApp.vUser.enabled" for="field_enabled">Enabled</label>
+          <input type="checkbox" class="form-check" name="enabled" id="field_enabled" data-cy="enabled" formControlName="enabled" />
+        </div>
+
+        <div class="row mb-3">
+          <label jhiTranslate="draftApp.vUser.vRole" for="field_vRoles">V Role</label>
+          <select
+            class="form-control"
+            id="field_vRoles"
+            data-cy="vRole"
+            multiple
+            name="vRoles"
+            formControlName="vRoles"
+            [compareWith]="compareVRole"
+          >
+            <option [ngValue]="vRoleOption" *ngFor="let vRoleOption of vRolesSharedCollection">{{ vRoleOption.id }}</option>
+          </select>
+        </div>
+      </div>
+
+      <div>
+        <button type="button" id="cancel-save" data-cy="entityCreateCancelButton" class="btn btn-secondary" (click)="previousState()">
+          <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+        </button>
+
+        <button
+          type="submit"
+          id="save-entity"
+          data-cy="entityCreateSaveButton"
+          [disabled]="editForm.invalid || isSaving"
+          class="btn btn-primary"
+        >
+          <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

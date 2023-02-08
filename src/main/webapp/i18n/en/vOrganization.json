@@ -1,0 +1,33 @@
+{
+  "draftApp": {
+    "vOrganization": {
+      "home": {
+        "title": "V Organizations",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new V Organization",
+        "createOrEditLabel": "Create or edit a V Organization",
+        "notFound": "No V Organizations found"
+      },
+      "created": "A new V Organization is created with identifier {{ param }}",
+      "updated": "A V Organization is updated with identifier {{ param }}",
+      "deleted": "A V Organization is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete V Organization {{ id }}?"
+      },
+      "detail": {
+        "title": "V Organization"
+      },
+      "id": "ID",
+      "parentId": "Parent Id",
+      "code": "Code",
+      "name": "Name",
+      "description": "Description",
+      "path": "Path",
+      "fullPath": "Full Path",
+      "enabled": "Enabled",
+      "type": "Type",
+      "vUser": "V User",
+      "vRole": "V Role"
+    }
+  }
+}
