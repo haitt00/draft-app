@@ -1,0 +1,11 @@
+entity VPermission{
+	parentId Long,
+    code String,
+    name String,
+    description String,
+    type String, //menu, submenu, viewable, datatable
+    order Double,
+    url String,
+    component String,
+    perms String
+}
