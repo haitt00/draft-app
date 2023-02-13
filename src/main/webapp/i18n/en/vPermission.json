@@ -1,0 +1,32 @@
+{
+  "draftApp": {
+    "vPermission": {
+      "home": {
+        "title": "V Permissions",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new V Permission",
+        "createOrEditLabel": "Create or edit a V Permission",
+        "notFound": "No V Permissions found"
+      },
+      "created": "A new V Permission is created with identifier {{ param }}",
+      "updated": "A V Permission is updated with identifier {{ param }}",
+      "deleted": "A V Permission is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete V Permission {{ id }}?"
+      },
+      "detail": {
+        "title": "V Permission"
+      },
+      "id": "ID",
+      "parentId": "Parent Id",
+      "code": "Code",
+      "name": "Name",
+      "description": "Description",
+      "type": "Type",
+      "order": "Order",
+      "url": "Url",
+      "component": "Component",
+      "perms": "Perms"
+    }
+  }
+}
